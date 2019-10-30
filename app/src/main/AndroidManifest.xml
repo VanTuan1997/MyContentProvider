@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.windows10timt.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.example.windows10timt.myapplication"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.example.windows10timt.myapplication.READ_DATABASE"
+            android:writePermission="com.example.windows10timt.myapplication.WRITE_DATABASE">
+
+        </provider>
+
+        <activity android:name=".BookActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AuthorActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+    <permission android:name="com.example.windows10timt.myapplication.WRITE_DATABASE"
+        android:label="Write Database"
+        android:protectionLevel="normal">
+    </permission>
+    <permission android:name="com.example.windows10timt.myapplication.READ_DATABASE"
+        android:label="Read Database"
+        android:protectionLevel="normal">
+    </permission>
+
+</manifest>
